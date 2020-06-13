@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import styled from 'styled-components';
 //import './App.css';
-import HeaderLanding from './LandingPageComponent/HeaderLanding';
-import Landing from './LandingPageComponent/Landing';
+import HeaderLanding from './HeaderLanding';
+import Landing from './Landing';
 
 const TrailsComponentContainer = styled.div`
     width: 100%;

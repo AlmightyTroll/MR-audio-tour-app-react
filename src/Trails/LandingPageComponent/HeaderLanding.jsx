@@ -9,7 +9,6 @@ const HeaderLanding = styled.header`
 
     font-family: caslon serrif;
     background-color: #0089aa;
-    color: red;
 
     display: flex;
     flex-direction: column; 
