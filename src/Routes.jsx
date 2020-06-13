@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import TrailsLandingComponent from './Trails/TrailsLandingComponent';
+import TrailsLandingComponent from './Trails/LandingPageComponent/TrailsLandingComponent';
 import CanyonViewTrailOverview from './Trails/CanyonViewTrail/CanyonViewTrailOverview';
 import CanyonViewStopsComponent from './Trails/CanyonViewTrail/CanyonViewStopsComponent';
 // import MenuComponent from './Menu';

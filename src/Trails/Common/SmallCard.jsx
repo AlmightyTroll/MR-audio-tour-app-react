@@ -3,6 +3,16 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import thumbnail from '../../img/hero-small.jpg';
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: #0089aa;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+        color: #0089aa;
+    }
+`
+
 const SmallCard = styled.div `
     background-color: white;
     width: 85vw;
@@ -15,42 +25,62 @@ const SmallCard = styled.div `
 
 
     display: flex;
-    justify-content: center;    
+    flex-direction: column;
 
-    overflow: scroll;
+`
+const CardTop = styled.h3 `
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+
+    
+    
+`
+
+const CardBottom = styled.div `
+    height: 85%;
+
+    display: flex;
 
 `
 
 const LookingFor = styled.p `
-    width: 50%;
-    text-align: left;
+    width: 45%;
+    margin: .5rem .5rem;
+
+    overflow: scroll;
+
+
 `
 
 const Thumbnail = styled.img `
-    width: 25vw;
-    height: auto;
+    height: 60%;
+    width: 45%;
+
+    margin: 3rem .5rem;
+
+    border-radius: 10px;
+
+    
 
     
 
 `
-
-
-
 const card = (props) => {
     console.log(props);
     return (
-        <Link to={props.stop.stopLink} >
+        <StyledLink to={props.stop.stopLink} >
             <SmallCard>
-                <div>{props.stop.name}</div>
-                <div>
+                <CardTop>{props.stop.name}</CardTop>
+                <CardBottom>
                     <LookingFor>
                         <b>Looking For:</b> <br /> 
                         Lorem hsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, unde placeat velit necessitatibus explicabo vel, voluptatibus aut corrupti dolores minus hic totam a animi repudiandae eveniet, reprehenderit officia esse assumenda? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam maxime, dignissimos modi iusto tempore debitis omnis quasi praesentium. Veritatis consequuntur id fuga cumque eius nostrum voluptatum illum ad molestias culpa.
                     </LookingFor>
                     <Thumbnail src={thumbnail} alt="Thumbnail" /> 
-                </div>
+                </CardBottom>
             </SmallCard>
-        </Link>
+        </StyledLink>
         
     );
 };

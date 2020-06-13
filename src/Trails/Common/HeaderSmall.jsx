@@ -8,7 +8,7 @@ const HeaderSmall = styled.header `
     height: 8vh;
     width: 100%;
 
-    background-color: red;
+    background-color: white;
 
     display: flex;
     justify-content: space-between;
