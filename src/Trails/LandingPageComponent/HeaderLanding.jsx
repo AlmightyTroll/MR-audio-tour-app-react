@@ -43,7 +43,7 @@ const Phrase = styled.p `
     color: white;
     font-size: 1.75rem;
 
-    margin-top: 3.25rem;
+    margin: 3rem 0;
 `
 
 const SVGWave = styled.svg `
