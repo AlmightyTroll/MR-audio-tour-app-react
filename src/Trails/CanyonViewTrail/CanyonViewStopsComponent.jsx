@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import styled from 'styled-components';
+import HeaderSmall from '../Common/HeaderSmall';
+//import HeaderSmallTheme2 from '../Common/HeaderSmallTheme2';
+import MediaCard from '../Common/MediaCard';
 //import './App.css';
 
 import canyonViewTrailData from '../../Data/TrailData';
@@ -12,13 +15,17 @@ import {
 import _ from 'lodash';
 
 const CanyonViewStopsContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    overflowY: scroll;
+	height: auto;
+	width: 100%;
 
-`
-const StopTitle = styled.div `
-  color: red;
+	background-color: #0089aa;
+	color: #0089aa;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;    
+
 `
 
 function CanyonViewStopsComponent() {
@@ -29,16 +36,17 @@ function CanyonViewStopsComponent() {
     const currentStop = stops.find(stop => {
       return stop.id == id;
     });
-    console.log(currentStop);
-
+	console.log(currentStop);
+	
+	
    
     return (
-        <CanyonViewStopsContainer>
-            <StopTitle>
-                {currentStop.name}
-            </StopTitle>
-            {id}
-        </CanyonViewStopsContainer>
+		<div>
+			<HeaderSmall />
+			<CanyonViewStopsContainer>
+				<MediaCard stop={currentStop} key={currentStop.id} />
+			</CanyonViewStopsContainer>
+		</div>
     ); 
   }
 

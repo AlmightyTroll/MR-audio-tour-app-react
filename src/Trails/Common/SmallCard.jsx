@@ -1,7 +1,65 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import thumbnail from '../../img/hero-small.jpg';
+//import thumbnail from '../../img/hero-small.jpg';
+
+
+const SmallCard = styled.div `
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    
+    box-shadow: 0 0 .3rem .1rem #0089aa;
+
+    display: flex;
+    flex-direction: column;
+
+`
+const CardTop = styled.div `
+    height: 70%;
+
+    font-size: 1.5rem;
+    color: white;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+`
+
+const BackgroundLocationImageContainer = styled.div `
+    height: 90%;
+    width: 100%;
+
+    background-image: url("http://i.stack.imgur.com/2OrtT.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    box-shadow: 0 0 1rem .3rem #0089aa;
+
+`
+
+const StopTitleContainer = styled.div `
+    width: 65%;
+    height: 10%;
+
+    background-color: #0089aa;
+    box-shadow: 0 0 .3rem .1rem #0089aa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 20%;
+    left: 73px;
+
+    opacity: 90%;
+
+`
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -11,77 +69,67 @@ const StyledLink = styled(Link)`
         text-decoration: none;
         color: #0089aa;
     }
+
 `
 
-const SmallCard = styled.div `
+const ListenNowButton = styled.div `
+    width: 35%;
+    height: 12%;
+
+    color: #0089aa;
+    font-size: 1.5rem;
+
     background-color: white;
-    width: 85vw;
-    height: 35vh;
-    
-    border: 2px solid white;
-    border-radius: 15px;
+    box-shadow: 0 0 .5rem .2rem #0089aa;
+    border-radius: 5px;
 
-    margin: 1.5rem 0;
-
-
-    display: flex;
-    flex-direction: column;
-
-`
-const CardTop = styled.h3 `
     display: flex;
     justify-content: center;
-    margin: 0.5rem;
+    align-items: center;
 
-    
-    
+    position: absolute;
+    top: 60%;
+    left: 136px;
+
+    opacity: 70%;
 `
 
 const CardBottom = styled.div `
-    height: 85%;
-
-    display: flex;
-
-`
-
-const LookingFor = styled.p `
-    width: 45%;
-    margin: .5rem .5rem;
 
     overflow: scroll;
 
+`
+
+const Directions = styled.p `
+    font-size: 1.3rem; 
+    color: #0089aa;       
+
+    padding: 1rem;
 
 `
 
-const Thumbnail = styled.img `
-    height: 60%;
-    width: 45%;
-
-    margin: 3rem .5rem;
-
-    border-radius: 10px;
-
-    
-
-    
-
-`
 const card = (props) => {
     console.log(props);
     return (
-        <StyledLink to={props.stop.stopLink} >
-            <SmallCard>
-                <CardTop>{props.stop.name}</CardTop>
-                <CardBottom>
-                    <LookingFor>
-                        <b>Looking For:</b> <br /> 
-                        Lorem hsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, unde placeat velit necessitatibus explicabo vel, voluptatibus aut corrupti dolores minus hic totam a animi repudiandae eveniet, reprehenderit officia esse assumenda? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam maxime, dignissimos modi iusto tempore debitis omnis quasi praesentium. Veritatis consequuntur id fuga cumque eius nostrum voluptatum illum ad molestias culpa.
-                    </LookingFor>
-                    <Thumbnail src={thumbnail} alt="Thumbnail" /> 
-                </CardBottom>
-            </SmallCard>
-        </StyledLink>
-        
+        <SmallCard>
+            <CardTop>
+                <StopTitleContainer>
+                    {props.stop.name}
+                </StopTitleContainer>
+                <StyledLink to={props.stop.stopLink} >
+                    <ListenNowButton>
+                        Listen Now
+                    </ListenNowButton>
+                </StyledLink>
+                <BackgroundLocationImageContainer />
+            </CardTop>
+            <CardBottom>
+                <Directions>
+                    <b>Directions:</b> <br />
+                    {props.stop.directions}
+                </Directions>
+            </CardBottom>
+        </SmallCard>
     );
 };
 

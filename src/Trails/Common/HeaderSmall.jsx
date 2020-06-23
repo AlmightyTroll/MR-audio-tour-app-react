@@ -10,11 +10,17 @@ const HeaderSmall = styled.header `
 
     background-color: white;
 
+    box-shadow: 0 0 .5rem .3rem #0089aa;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     overflow: hidden;
+
+    position: fixed;
+
+    z-index: 100;
     
 `
 
@@ -38,7 +44,7 @@ const Title = styled.h1 `
 
 const NavButton = styled.img `
     height: 2rem;
-    width: 2rem;
+    width: auto;
 
     padding-right: 1rem;
     border-radius: 50%;

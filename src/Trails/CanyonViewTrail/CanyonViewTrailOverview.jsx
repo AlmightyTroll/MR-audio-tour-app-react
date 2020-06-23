@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeaderSmall from '../Common/HeaderSmall';
+//import HeaderSmallTheme2 from '../Common/HeaderSmallTheme2';
 import SmallCard from '../Common/SmallCard';
 
-import canyonViewTrailData from '../../Data/TrailData';
+import TrailData from '../../Data/TrailData';
 
 
 const CardsContainer = styled.div `
@@ -21,8 +22,8 @@ const CardsContainer = styled.div `
 
 const CanyonViewTrailOverview = () => {
 
-    const { trails } = canyonViewTrailData;
-    // above = this over here ...> const trails = canyonViewTrailData.trails;
+    const { trails } = TrailData;
+    // above = this over here ...> const trails = TrailData.trails;
     const stops = trails[0].stops;
 
     console.log(stops);
