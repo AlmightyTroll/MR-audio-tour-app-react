@@ -26,8 +26,6 @@ const CanyonViewTrailOverview = () => {
     // above = this over here ...> const trails = TrailData.trails;
     const stops = trails[0].stops;
 
-    console.log(stops);
-
     const renderTrailsStops = () => {
         return stops.map((stop) => {
             return (

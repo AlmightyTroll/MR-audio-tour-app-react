@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import heroImg from '../../img/hero-small.jpg';
 import ControlledCarousel from '../Common/Carousel';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const MediaCard = styled.div `
-    background-color: white;
+const MediaCardContainer = styled.div `
+    background-color: #0089aa;
     width: 100%;
-    height: 100vh;
 
     box-shadow: 0 0 .3rem .1rem #0089aa;
 
@@ -19,99 +20,116 @@ const MediaCard = styled.div `
 
 `
 const CardTop = styled.div `
-    height: 80%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin-bottom: 1rem;
+    padding: 0 1rem;
+`
 
+
+const CarouselContainer = styled.div `
+    width: 100%;
+
+    border: 5px solid white;
+    margin-top: 4.5rem;
+
+    border-radius: 5px;
+
+    
 `
 const StopTitleContainer = styled.div `
-    width: 65%;
-    height: 7%;
+    width: 100%;
 
-    background-color: #0089aa;
-    color: white;
+    background-color: white;
+    color: #0089aa;
     font-size: 1.5rem;
-
-    box-shadow: 0 0 .3rem .1rem #0089aa;
+    border-radius: 15px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: absolute;
-    top: 20%;
-    left: 73px;
-
-    opacity: 90%;
-
+    margin-top: 1rem;
+    padding: 0.5rem;
 `
-
-const CarouselContainer = styled.div `
-    height: 90%;
+const AudioPlayerContainer = styled.div `
     width: 100%;
 
-    background-image: url("http://i.stack.imgur.com/2OrtT.jpg");
+    margin-top: 1rem;
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    border: 5px solid white;
+    border-radius: 5px;
 
-    margin-top: 4rem;
-    
 `
 
 const CardBottom = styled.div `
+
+
+    background-color: #0089aa;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin: 1rem;
+    margin: 0 1rem;
+
+
+`
+
+const DescriptionContainer = styled.div `
+    width: 100%;
+    height: 20vh;
+
+    border: 5px solid white;
+    border-radius: 5px;
+
+    margin: 1rem 0;
 
     overflow: scroll;
 
-`
-const AudioPlayer = styled.div `
-    width: 75%;
 
 `
 
 const Description = styled.p `
-    font-size: 1.3rem; 
-    color: #0089aa;       
 
-    padding: 1rem;
+    font-size: 1.3rem; 
+    color: white;     
+
+    padding: 0 .5rem;
 
 
 `
 
-const mediaCard = (props) => {
+const MediaCard = (props) => {
     return (
 
-            <MediaCard>
+            <MediaCardContainer>
                 <CardTop>
+                    <CarouselContainer>
+                        <ControlledCarousel images={props.stop.images}/>
+                    </CarouselContainer>
                     <StopTitleContainer>
                         {props.stop.name}
                     </StopTitleContainer>
-                    <CarouselContainer>
-                        <ControlledCarousel />
-                    </CarouselContainer>
-                    <AudioPlayer>
-                        AudioFile
-                    </AudioPlayer>
+                    <AudioPlayerContainer>
+                        <AudioPlayer autoPlay src={process.env.PUBLIC_URL + props.stop.audio_clip} showJumpControls={false}/>
+                    </AudioPlayerContainer>
                 </CardTop>
                 <CardBottom>
-                    <Description>
-                        <b>Description:</b> <br /> 
-                        {props.stop.description}
-                    </Description>
+                    <DescriptionContainer>
+                        <Description>
+                            <b>Description:</b> <br /> 
+                            {props.stop.description}
+                        </Description>
+                    </DescriptionContainer>
                 </CardBottom>
-            </MediaCard>        
+            </MediaCardContainer>        
     );
 };
 
-export default mediaCard;
+MediaCard.propTypes = {
+    stops: PropTypes.object
+}
+export default MediaCard;

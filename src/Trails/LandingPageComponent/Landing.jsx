@@ -20,25 +20,27 @@ const Trails = styled.h2 `
 `
 
 const CanyonTrail = styled(Link) `
-    font-size: 1.75rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #0089aa;
 
 `
 
 const OceanTrail = styled.a `
-    font-size: 1.75rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #0089aa;
 
 `
 
 const Or = styled.img `
-    width: 10%;
+    width: 15%;
     height: auto;
 
     disply: flex;
     justify-content: center;
+
+    margin: 1rem;
 `
 
 const landing = () => {
