@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const MediaCardContainer = styled.div `
-
     background-color: #0089aa;
     width: 100%;
 
@@ -27,11 +26,10 @@ const CardTop = styled.div `
     align-items: center;
 
     padding: 0 1rem;
-
 `
 
-const CarouselContainer = styled.div `
 
+const CarouselContainer = styled.div `
     width: 100%;
 
     border: 5px solid white;
@@ -39,9 +37,9 @@ const CarouselContainer = styled.div `
 
     border-radius: 5px;
 
+    
 `
 const StopTitleContainer = styled.div `
-
     width: 100%;
 
     background-color: white;
@@ -55,10 +53,8 @@ const StopTitleContainer = styled.div `
 
     margin-top: 1rem;
     padding: 0.5rem;
-
 `
 const AudioPlayerContainer = styled.div `
-
     width: 100%;
 
     margin-top: 1rem;
@@ -70,6 +66,7 @@ const AudioPlayerContainer = styled.div `
 
 const CardBottom = styled.div `
 
+
     background-color: #0089aa;
 
     display: flex;
@@ -78,10 +75,10 @@ const CardBottom = styled.div `
 
     margin: 0 1rem;
 
+
 `
 
 const DescriptionContainer = styled.div `
-
     width: 100%;
     height: 20vh;
 
@@ -92,6 +89,7 @@ const DescriptionContainer = styled.div `
 
     overflow: scroll;
 
+
 `
 
 const Description = styled.p `
@@ -100,6 +98,7 @@ const Description = styled.p `
     color: white;     
 
     padding: 0 .5rem;
+
 
 `
 
