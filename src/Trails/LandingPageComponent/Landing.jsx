@@ -1,65 +1,55 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logoMR from '../../img/logoMR.png';
 
+const Aux = styled.div`
+	margin-top: 2rem;
+`;
 
+const Trails = styled.h2`
+	font-size: calc(10px + 2vmin);
+	font-family: caslon serrif;
 
-const Aux = styled.div `
-    margin-top: 2rem;
-`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`;
 
-const Trails = styled.h2 `
-    font-size: calc(10px + 2vmin);
-    font-family: caslon serrif;
+const CanyonTrail = styled(Link)`
+	font-size: 2rem;
+	text-decoration: none;
+	color: #0089aa;
+`;
 
-    display: felx;
-    flex-direction: column; 
-    justify-content: center;
+const OceanTrail = styled.a`
+	font-size: 2rem;
+	text-decoration: none;
+	color: #0089aa;
+`;
 
-`
+const Or = styled.img`
+	width: 15%;
+	height: auto;
 
-const CanyonTrail = styled(Link) `
-    font-size: 2rem;
-    text-decoration: none;
-    color: #0089aa;
+	display: flex;
+	justify-content: center;
 
-`
-
-const OceanTrail = styled.a `
-    font-size: 2rem;
-    text-decoration: none;
-    color: #0089aa;
-
-`
-
-const Or = styled.img `
-    width: 15%;
-    height: auto;
-
-    disply: flex;
-    justify-content: center;
-
-    margin: 1rem;
-`
+	margin: 1rem;
+`;
 
 const landing = () => {
-    return (
-        <Aux>
-            <Trails>
-                <CanyonTrail to="/canyon-view">
-                    Canyon View Trail 
-                </CanyonTrail>
-                
-            </Trails>
-            <Or src={logoMR} alt="Or" />
-            <Trails>
-                <OceanTrail href='/'>
-                    Ocean View Trail
-                </OceanTrail>
-            </Trails>
-        </Aux>
-    );        
-}
+	return (
+		<Aux>
+			<Trails>
+				<CanyonTrail to="/canyon-view">Canyon View Trail</CanyonTrail>
+			</Trails>
+			<Or src={logoMR} alt="Or" />
+			<Trails>
+				<OceanTrail href="/">Ocean View Trail</OceanTrail>
+			</Trails>
+		</Aux>
+	);
+};
 
 export default landing;
