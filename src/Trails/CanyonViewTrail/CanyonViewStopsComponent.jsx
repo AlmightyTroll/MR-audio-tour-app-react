@@ -16,7 +16,7 @@ const CanyonViewStopsContainer = styled.div`
   width: 100%;
 
   background-color: #0089aa;
-  color: #00891a;
+  color: #0089aa;
 
   display: flex;
   flex-direction: column;
